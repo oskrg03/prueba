@@ -21,7 +21,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
       <div class="formulario">
         <form [formGroup]="formGroup">
           <label class="etiqueta" for="name">Nombre</label>
-          <ion-input
+          <ion-input  class="in" 
             required
             name="name"
             formControlName="name"
@@ -31,6 +31,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
           <label class="etiqueta" for="surname">Apellido</label>
           <ion-input
             required
+            class="in" 
             name="surname"
             formControlName="surname"
             type="text"
@@ -39,6 +40,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
           <label class="etiqueta" for="phone">Teléfono</label>
           <ion-input
             required
+            class="in" 
             name="phone"
             formControlName="phone"
             type="text"
@@ -47,6 +49,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
           <label class="etiqueta" for="email">Email</label>
           <ion-input
             required
+            class="in" 
             name="email"
             formControlName="email"
             type="email"
@@ -55,6 +58,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
           <label class="etiqueta" for="edad">Edad</label>
           <ion-input
             required
+            class="in" 
             name="edad"
             formControlName="edad"
             type="number"
