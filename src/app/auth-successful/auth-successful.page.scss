@@ -1,0 +1,59 @@
+
+.etiqueta{
+    color: rgb(134,141,159);
+    font-size: 16px;
+    padding-left: 2%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header{
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-right: 35%;
+    align-self: flex-start;
+    text-align: justify;
+    margin-bottom: 5%;
+    
+}
+
+.informacion{
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 5%;
+    color: #364b69;
+}
+
+.formulario{
+  
+    margin-left: 35%;
+    margin-right: 35%;
+  
+}
+
+.avatar{
+ 
+    width: 150px;
+    height: 35px;
+   
+}
+
+.informacion,h2{
+    align-self: flex-start;
+    text-align: justify;
+    font-weight: bold;
+}
+h4{
+    align-self: flex-start;
+    text-align: justify;
+}
+
+.boton{
+    margin-bottom: 20px;
+}
