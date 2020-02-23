@@ -1,3 +1,4 @@
+/*Contenedor*/
 .container {
     display: flex;
     flex-direction: column;
@@ -5,11 +6,28 @@
     justify-content: center;
     text-align: center;
 }
+
+/*Imagen*/
 .img_error{
     margin-top: 50px;
 }
 
+/*etiquetas generales*/
 h1 {
     font-weight: bolder;
     color: #4d515b;
+}
+
+h3 {
+    font-weight: bolder;
+    color: #4d515b;
+}
+
+h5 {
+    padding: 0 50px 50px 0;
+    color: #4d515b;
+}
+
+a{
+    text-decoration: none;
 }

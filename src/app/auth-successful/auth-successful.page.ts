@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder } from "@angular/forms";
 
+//Plantilla con el formulario que tendrá los datos del usuario
 @Component({
   template: `
     <ion-content class="container">
@@ -20,10 +21,16 @@ import { FormGroup, FormBuilder } from "@angular/forms";
       <div class="formulario">
         <form [formGroup]="formGroup">
           <label class="etiqueta" for="name">Nombre</label>
-          <ion-input name="name" formControlName="name" type="text"></ion-input>
+          <ion-input
+            required
+            name="name"
+            formControlName="name"
+            type="text"
+          ></ion-input>
 
           <label class="etiqueta" for="surname">Apellido</label>
           <ion-input
+            required
             name="surname"
             formControlName="surname"
             type="text"
@@ -31,6 +38,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 
           <label class="etiqueta" for="phone">Teléfono</label>
           <ion-input
+            required
             name="phone"
             formControlName="phone"
             type="text"
@@ -38,6 +46,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 
           <label class="etiqueta" for="email">Email</label>
           <ion-input
+            required
             name="email"
             formControlName="email"
             type="email"
@@ -45,6 +54,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 
           <label class="etiqueta" for="edad">Edad</label>
           <ion-input
+            required
             name="edad"
             formControlName="edad"
             type="number"
@@ -58,27 +68,34 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   styleUrls: ["./auth-successful.page.scss"]
 })
 export class AuthSuccessfulPage implements OnInit {
-  nombre: any;
+  url: any; //url con datos del usuario
 
-  public formGroup: FormGroup;
+  public formGroup: FormGroup; //Controlador de formulario
 
   constructor(private route: Router, private formBuilder: FormBuilder) {}
-  data: string[] = [];
+  data: string[] = []; //Se guardará la información una vez desfragmentada
+
+  //Una vez carge la página
   ngOnInit() {
-    this.nombre = this.route.parseUrl(this.route.url).toString();
-
-    let values = this.nombre.split(";");
-
+    //Se obtiene la url
+    this.url = this.route.parseUrl(this.route.url).toString();
+    //Se separan los valores cada que se encuentra un ;
+    let values = this.url.split(";");
+    //Se recorre el arreglo de valores desde el segundo elemento, el primero es el nombre de la página
     for (var i = 1; i < values.length; i++) {
+      //Se separa el nombre de la variable y su valor
       var val = values[i].split("=");
-      console.log(val[1]);
+      //Cuando el valor sea el teléfono se reemplaza el caracter %2B por un +
       val[1] = val[1].replace("%2B", "+");
+      //Se guarda en el arreglo data solo los valores obtenidos en la separación anterior
       this.data.push(val[1].trim());
     }
+    //Se ejecuta el método para inicializar el formulario
     this.buildForm();
   }
-
+  //Se inicializa el formulario
   private buildForm() {
+    //Se relaciona cada campo del formulario con la información correspondiente
     this.formGroup = this.formBuilder.group({
       name: this.data[1],
       surname: this.data[2],

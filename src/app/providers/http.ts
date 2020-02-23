@@ -8,12 +8,13 @@ export class HttpProvider {
     console.log('Hello HttpProvider Provider');
     
   }
-  
+  //Url de la API para obtener respuesta
   path : string = 'https://api.bnext.io/partner_test/user?id=';
   
-  loadUsers(numero:string){
+  //Función que recibe el número y obtiene la respuesta por petición GET
+  loadAnswer(numero:string){
      //console.log(this.path+numero);
-
+    //Retorna la respuesta obtenida de la API
     return this.http
     .get(this.path+numero)
     

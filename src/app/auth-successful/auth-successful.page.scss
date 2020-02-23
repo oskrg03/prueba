@@ -1,10 +1,10 @@
-
+/*Label*/
 .etiqueta{
     color: rgb(134,141,159);
     font-size: 16px;
     padding-left: 2%;
 }
-
+/*Contenedor ion-content*/
 .container{
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
     align-items: center;
     height: 100%;
 }
-
+/*Contenedor de la imagen*/
 .header{
     margin-top: 5%;
     margin-left: 35%;
@@ -22,7 +22,7 @@
     margin-bottom: 5%;
     
 }
-
+/*Información sobre el prestamo*/
 .informacion{
     margin-left: 35%;
     margin-right: 35%;
@@ -30,30 +30,33 @@
     color: #364b69;
 }
 
+
+/*Form*/
 .formulario{
   
     margin-left: 35%;
     margin-right: 35%;
   
 }
-
+/*Img*/
 .avatar{
  
     width: 150px;
     height: 35px;
    
 }
-
+/*Información, título*/
 .informacion,h2{
     align-self: flex-start;
     text-align: justify;
     font-weight: bold;
 }
+/*Información texto adicional*/
 h4{
     align-self: flex-start;
     text-align: justify;
 }
-
+/*Botón*/
 .boton{
     margin-bottom: 20px;
 }
